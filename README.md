@@ -45,4 +45,4 @@ Watchman looks out for file changes and triggers actions such as rebuilding asse
 
 12. Open the ```index.ios.js``` file in your text editor, make some changes to the text between the <Text></Text> tags and then save it. Go back to your simulator and then press Cmd+R. Now you should be able to see your updated changes.
 
-13. Delete the code from ```index.ios.js``` as we'll be writing our own from scratch later.
+13. Delete the code from ```index.ios.js``` as we'll be writing our own from scratch later. 

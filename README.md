@@ -118,3 +118,5 @@ You should be able to see the emulator fetch the JS bundle and then display the 
 
 17. After you've made changes in ```index.android.js``` you can reload the emulator by pressing the grip in the bottom right and then selecting 'Reload JS':
 ![reload js](https://cloud.githubusercontent.com/assets/12450298/15807339/68f9fe10-2b53-11e6-942d-7bccc3e1b255.png)
+
+### You've now successfully set up a development environment for both IOS and Android! Now it's time to start developing...

@@ -71,7 +71,7 @@ Watchman looks out for file changes and triggers actions such as rebuilding asse
 -Edit the new first line and paste -```ANDROID_HOME=/usr/local/opt/android-sdk```  
 -Then press ```:wq```  
 -Lastly enter ```$ echo $ANDROID_HOME``` (should print what you saved it as)  
--If that hasn't worked then try ```$ export ANDROID_HOME=/usr/local/opt/android-sdk``` in your terminal
+-If that hasn't worked then try ```$ export ANDROID_HOME=export ANDROID_HOME=~/Library/Android/sdk``` in your terminal
 
 8. In the React Native docs it recommends that you install **[Flow](http://www.flowtype.org/)** which is a static type checker which helps to quickly find errors in Javascript applications. You can install it with Homebrew:  
 ```$ brew install flow```
@@ -92,4 +92,29 @@ Watchman looks out for file changes and triggers actions such as rebuilding asse
 13. Next download and install **[VirtualBox](https://www.virtualbox.org/)** which is a virtual machine that you can run on top of your existing OS. (It basically helps with the emulation of Genymotion):
 ![virtualbox](https://cloud.githubusercontent.com/assets/12450298/15804924/b859b672-2b11-11e6-8f34-6f2ac1599ccb.png)
 Choose the version you want:
-![vb version](https://cloud.githubusercontent.com/assets/12450298/15804938/f3c838dc-2b11-11e6-9511-31abf662b5ce.png)
+![vb version](https://cloud.githubusercontent.com/assets/12450298/15804938/f3c838dc-2b11-11e6-9511-31abf662b5ce.png)  
+Then follow the instructions to install it:
+![install vb](https://cloud.githubusercontent.com/assets/12450298/15804957/967ae4da-2b12-11e6-8b8c-e3484eb6f006.png)
+
+14. To run a device emulator, open Genymotion and then sign in. Then when it asks if you want to add a new device click yes:
+![add device](https://cloud.githubusercontent.com/assets/12450298/15804990/5ba43766-2b13-11e6-823a-0c668913126e.png)
+
+15. Select a device that you want to emulate and then click 'next':
+![device select](https://cloud.githubusercontent.com/assets/12450298/15807130/47d98d50-2b4d-11e6-9556-358e99dd2a59.png)
+Genymotion then retrieves the virtual device:
+![retrieve device](https://cloud.githubusercontent.com/assets/12450298/15807146/875e5924-2b4d-11e6-9600-dd6c9d10d86c.png)
+If it displays the error 'Genymotion failed to import OVA files' then delete the Genymotion cache by going into settings>misc:
+![clear cache](https://cloud.githubusercontent.com/assets/12450298/15807240/7f83858c-2b50-11e6-8dae-0722c23b7d1a.png)
+
+16. To run the emulator, click on the one you just downloaded and then press 'start':
+![start emulator](https://cloud.githubusercontent.com/assets/12450298/15807250/d1084b9a-2b50-11e6-9c6b-baa4b035d72e.png)
+Then go to your terminal and type the following commands in separate tabs or windows (make sure there is only one instance running):  
+```$ npm run start```  
+```$ react-native run-android```    
+(make sure your emulator is running)
+You should be able to see the emulator fetch the JS bundle and then display the content in ```index.android.js```:
+![fetch bundle](https://cloud.githubusercontent.com/assets/12450298/15807316/d99db996-2b52-11e6-8f17-fc06332e7a1b.png)
+![index.android.js](https://cloud.githubusercontent.com/assets/12450298/15807323/fb1c3408-2b52-11e6-8a47-792a716c728e.png)
+
+17. After you've made changes in ```index.android.js``` you can reload the emulator by pressing the grip in the bottom right and then selecting 'Reload JS':
+![reload js](https://cloud.githubusercontent.com/assets/12450298/15807339/68f9fe10-2b53-11e6-942d-7bccc3e1b255.png)

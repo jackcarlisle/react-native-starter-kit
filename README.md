@@ -114,7 +114,9 @@ Then go to your terminal and type the following commands in separate tabs or win
 (make sure your emulator is running)
 You should be able to see the emulator fetch the JS bundle and then display the content in ```index.android.js```:
 ![fetch bundle](https://cloud.githubusercontent.com/assets/12450298/15807316/d99db996-2b52-11e6-8f17-fc06332e7a1b.png)
-![index.android.js](https://cloud.githubusercontent.com/assets/12450298/15807323/fb1c3408-2b52-11e6-8a47-792a716c728e.png)
+![index.android.js](https://cloud.githubusercontent.com/assets/12450298/15807323/fb1c3408-2b52-11e6-8a47-792a716c728e.png)  
+If the build still fails, create a new file in your `android/` directory called `local.properties` with the following code within it:  
+`sdk.dir = /Users/<USERNAME>/Library/Android/sdk`
 
 17. After you've made changes in ```index.android.js``` you can reload the emulator by pressing the grip in the bottom right and then selecting 'Reload JS':
 ![reload js](https://cloud.githubusercontent.com/assets/12450298/15807339/68f9fe10-2b53-11e6-942d-7bccc3e1b255.png)

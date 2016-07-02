@@ -2,7 +2,7 @@
 A tutorial for getting started with your first react-native application
 
 
-# Environment Setup
+- # Environment Setup
 
 ## IOS
 
@@ -120,3 +120,81 @@ You should be able to see the emulator fetch the JS bundle and then display the 
 ![reload js](https://cloud.githubusercontent.com/assets/12450298/15807339/68f9fe10-2b53-11e6-942d-7bccc3e1b255.png)
 
 ### You've now successfully set up a development environment for both IOS and Android! Now it's time to start developing...
+
+- # Redux
+
+### Next we'll add **[Redux](http://redux.js.org/)** to manage the state of our application.
+If you haven't checked out these Redux **[tutorial videos](https://egghead.io/courses/getting-started-with-redux)** from its creator, Dan Abramov, I'd strongly recommend doing so before you go any further.
+
+1. Create the following folders and files within your file tree:  
+```
+├── android
+├── app
+│   ├── actions
+│   ├── components
+│   ├── containers
+│   ├── reducers
+│   ├── action_types.js
+│   ├── config.js
+│   └── configure_store.js
+├── ios
+├── test
+├── .buckconfig
+├── .flowconfig
+├── .gitignore
+├── .watchmanconfig
+├── index.android.js
+└── index.ios.js
+```  
+We'll build up our file tree as we start to develop our appplication but first let's add content to our `config.js` and `configure_store.js` files
+
+2. In your `config.js` file add the following:  
+```js  
+'use strict';  
+export default {
+  appName: '<insert_app_name>',
+  inviteLink: 'http://localhost:1234',
+  serverRoot: 'http://localhost:1234'
+};
+```  
+And in your `configure_store.js` file we'll set up our store:
+```js
+'use strict';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
+import rootReducer from './reducers/index.js';
+const createStoreWithMiddleware = applyMiddleware(thunk, createLogger())(createStore);
+export default () => {
+  const store = createStoreWithMiddleware(rootReducer);
+  return store;
+};
+```
+You'll need to install these modules as dependencies in order to use them. Run the following command in your command line:  
+`$ npm install --save redux redux-thunk redux-logger`  
+Let's walk through what we've added. We've imported a number of modules at the top of our file. So what do they do?    
+`createStore` - creates a Redux store that holds the complete state tree of your app.  
+`applyMiddleware` - allows you to add certain middleware to extend the functionality of Redux.  
+`thunk` - middleware that allows you to dispatch a function instead of an action. _(these functions can dispatch other actions)_  
+`createLogger` - debugging tool that logs all of the actions that have been called to the console.  
+We then need to import our root reducer _(which we'll write in the next step)_  
+The store is created with our root reducer and then exported for use in our `index.android.js` and `index.ios.js` files.
+
+3. Now let's create our root reducer. A root reducer combines all of our reducers together into a single object.  
+In your `reducers` directory create an `index.js` file and add the following code:  
+```js
+'use strict';
+import { combineReducers } from 'redux';
+import reducer1 from './reducer_1.js';
+import reducer2 from './reducer_2.js';
+const rootReducer = combineReducers({
+  reducer1,
+  reducer2
+});
+export default rootReducer;
+```  
+We import each of our reducers into the `index.js` file and then use Redux's `combineReducers` to merge them together _(once they've been created)_.
+
+4. Now we have to add our store to our application. We can do this in our `index.android.js` and `index.ios.js` files.  
+We need to wrap our app components that are returned from these files in `<Provider></Provider>` tags. The Provider _provides_ the application with the store. Install `react-redux` to gain access to the provider:  
+`$ npm install --save react-redux`

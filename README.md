@@ -2,7 +2,7 @@
 A tutorial for getting started with your first react-native application
 
 
-- # Environment Setup
+# Environment Setup
 
 ## IOS
 
@@ -123,7 +123,7 @@ If the build still fails, create a new file in your `android/` directory called 
 
 ### You've now successfully set up a development environment for both IOS and Android! Now it's time to start developing...
 
-- # Redux
+# Redux
 
 ### Next we'll add **[Redux](http://redux.js.org/)** to manage the state of our application.
 If you haven't checked out these Redux **[tutorial videos](https://egghead.io/courses/getting-started-with-redux)** from its creator, Dan Abramov, I'd strongly recommend doing so before you go any further.

@@ -23,7 +23,7 @@ Watchman looks out for file changes and triggers actions such as rebuilding asse
 
 6. Initialise your React Native project using the React Native cli:  
 ```$ react-native init <projectName>```  
-**NOTE:** the project name must be purely `alphanumeric`
+**NOTE:** the project name must be purely [`alphanumeric`](https://en.wikipedia.org/wiki/Alphanumeric)
 
 7. Checkout to the newly created folder:  
 ```$ cd <projectName>```

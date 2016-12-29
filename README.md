@@ -72,6 +72,7 @@ Watchman looks out for file changes and triggers actions such as rebuilding asse
 -Then press ```:wq```  
 -Lastly enter ```$ echo $ANDROID_HOME``` (should print what you saved it as)  
 -If that hasn't worked then try ```$ export ANDROID_HOME=~/Library/Android/sdk``` in your terminal
+-Restart your shell so that it loads the new bash profile `||` run `source ~/.bash_profile` if you want to keep the same window
 
 8. In the React Native docs it recommends that you install **[Flow](http://www.flowtype.org/)** which is a static type checker which helps to quickly find errors in Javascript applications. You can install it with Homebrew:  
 ```$ brew install flow```
